@@ -1,0 +1,39 @@
+/*Rood #dd3038;*/
+/*Oranje #e7613a;*/
+/*Licht oranje #FDF4F2;*/
+/*Zwart #292929 (voor standaard tekst);*/
+/*Wit #FFFFFF;*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #FDF4F2;
+    --header-color: #e7613a #dd3038;
+    --article-color: #FFFFFF;
+    --nf-text-color: #FFFFFF;
+    --main-text-color: #292929;
+    --link-text-color: #dd3038;
+    --ff-main: 'Roboto Condensed', Arial, sans-serif;
+    --ff-heading: 'Quicksand', Arial, sans-serif;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+/* --------------- 4.2 Introduction ------------------- */

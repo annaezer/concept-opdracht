@@ -1,13 +1,21 @@
 import React from "react";
 import './App.css';
-import logo from './assets/logo.png';
+import {Route, Routes} from "react-router-dom";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
+import Subreddit from "./pages/subreddit/Subreddit";
 
 function App() {
-  return (
-      <>
-    <h1>Begin</h1>
-      </>
-  );
+    return (
+        <>
+            <Header/>
+            <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/subreddit/:subredditId' element={<Subreddit/>}/>
+            </Routes>
+            <footer></footer>
+        </>
+    );
 }
 
 export default App;
