@@ -4,7 +4,7 @@ import axios from 'axios';
 import logo from '../../assets/logo.png';
 import {Link} from "react-router-dom";
 
-function Home(props) {
+function Home() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -15,6 +15,7 @@ function Home(props) {
                 console.log(results);
                 const fifteenPosts = results.data.data.children;
                 setPosts(fifteenPosts);
+                console.log(fifteenPosts);
 
             } catch (e) {
                 console.error(e);
@@ -48,14 +49,16 @@ function Home(props) {
                             {posts.map((post) => {
                                 return (
                                     <div className='flex-wrap'>
-                                    <article className='article' key={post.data.subreddit_id}>
-                                        <h3><a href={post.data.url}>{post.data.title}</a></h3>
-                                        <p><Link to='/subreddit/:subredditId'>{post.data.subreddit_name_prefixed}</Link></p>
-                                        <div>
-                                            <p>Comments: {post.data.num_comments}</p>
-                                            <p>Ups: {post.data.ups}</p>
-                                        </div>
-                                    </article>
+                                        <article className='article' key={post.data.id}>
+                                            <h3><a href={post.data.url}>{post.data.title}</a></h3>
+                                            <p><Link
+                                                to={`/subreddit/${post.data.subreddit}`}>{post.data.subreddit_name_prefixed}</Link>
+                                            </p>
+                                            <div>
+                                                <p>Comments: {post.data.num_comments}</p>
+                                                <p>Ups: {post.data.ups}</p>
+                                            </div>
+                                        </article>
                                     </div>
                                 )
                             })}
@@ -63,7 +66,6 @@ function Home(props) {
                     }
                 </div>
             </main>
-            <footer> In opdracht van NOVI Hogeschool @2022 </footer>
         </>
     );
 }

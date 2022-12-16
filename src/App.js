@@ -13,7 +13,7 @@ function App() {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/subreddit/:subredditId' element={<Subreddit/>}/>
             </Routes>
-            <footer></footer>
+            <footer>In opdracht van NOVI Hogeschool @2022</footer>
         </>
     );
 }
