@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 
 function PageNotFound() {
     const navigate = useNavigate();
 
-    setTimeout(()=>{
-        navigate("/")
-    }, 3000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/")
+        }, 3000);
+
+        return function cleanup() {
+            clearTimeout(timer);
+        }
+    }, []);
 
     return (
         <>

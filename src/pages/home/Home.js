@@ -4,6 +4,7 @@ import axios from 'axios';
 import logo from '../../assets/logo.png';
 import {Link} from "react-router-dom";
 import Header from "../../components/header/Header";
+import textSlicer from "../../helpers/textSlicer";
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -11,12 +12,14 @@ function Home() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        const controller = new AbortController();
+
         async function fetchData() {
             setLoading(true);
 
             try {
                 setError(false);
-                const results = await axios.get('https://www.reddit.com/hot.json?limit=15');
+                const results = await axios.get('https://www.reddit.com/hot.json?limit=15',{signal: controller.signal});
                 console.log(results);
                 const fifteenPosts = results.data.data.children;
                 setPosts(fifteenPosts);
@@ -28,8 +31,11 @@ function Home() {
             }
             setLoading(false);
         }
-
         fetchData();
+
+        // return function cleanup() {
+        //     controller.abort();
+        // }
     }, []);
 
     return (
