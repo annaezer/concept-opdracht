@@ -13,7 +13,8 @@ function App() {
                 <Route path='/subreddit/:subredditId' element={<Subreddit/>}/>
                 <Route path='*' element={<PageNotFound/>}/>
             </Routes>
-            <footer>In opdracht van NOVI Hogeschool @2022</footer>
+            <footer className='outer-container'>
+                <span className='inner-container'>In opdracht van NOVI Hogeschool @2022</span></footer>
         </>
     );
 }

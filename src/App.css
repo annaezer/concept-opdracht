@@ -36,15 +36,59 @@ h1, h2, h3, h4 {
 
 /* --------------- 3.1 Reusables ----------------------- */
 
+.outer-container {
+    width: 100%;
+    padding: 20px 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* --------------- 3.2 Other --------------------------- */
 
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 0 80px 0;
+}
+
+li {
+    padding: 0 0 0 50px;
+}
+
 /* ------------------------------- 4. Areas ---------------------------------------- */
+/* --------------- 4.0 Header ------------------- */
+
+h1 {
+    font-size: 70px;
+    padding: 0 0 80px 0;
+}
+
+img {
+    width: 200px;
+}
+
+header {
+    background: #dd3038;
+    background: var(--header-color);
+}
 
 /* --------------- 4.1 Navigation ------------------- */
 
 nav a {
     color: var(--nf-text-color);
     text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
 }
 
 /* --------------- 4.2 Main ------------------- */
@@ -53,10 +97,40 @@ main {
     background: var(--main-bg-color);
 }
 
+.headings {
+    padding: 80px 0 80px 0;
+}
+
+.headings h2 {
+    font-size: 50px;
+}
+
+.headings h4 {
+    font-size: 20px;
+    margin: 0 0 60px 0;
+}
+
 /* --------------- 4.3 Article ------------------- */
+.flex-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
 article {
     background: var(--article-color);
+    flex-basis: 300px;
+    height: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 11px 16px 0 rgba(0, 0, 0, 0.1);
 }
 
 .article-title a {
@@ -67,6 +141,7 @@ article {
 .subreddit-link a {
     color: var(--link-text-color);
 }
+
 
 /* --------------- 4.3 Footer ------------------- */
 

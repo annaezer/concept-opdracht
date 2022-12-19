@@ -41,30 +41,31 @@ function Home() {
                 <img src={logo} alt='logo Reddit'/>
                 <h1>Reddit</h1>
             </Header>
-            <main>
-                <div className='inner-container'>
+            <main className='outer-container'>
+                <div className='inner-container headings'>
                     <h2>Hottest posts</h2>
                     <h4>on Reddit right now</h4>
-                    {posts &&
-                        <>
-                            {posts.map((post) => {
-                                return (
-                                    <div className='flex-wrap'>
+                    <div className='flex-wrap'>
+                        {posts &&
+                            <>
+                                {posts.map((post) => {
+                                    return (
                                         <article className='article' key={post.data.id}>
-                                            <h3 className='article-title'><a href={post.data.url}>{post.data.title}</a></h3>
-                                            <p className='subreddit-link'><Link
-                                                to={`/subreddit/${post.data.subreddit}`}>{post.data.subreddit_name_prefixed}</Link>
-                                            </p>
+                                            <h3 className='article-title'><a href={post.data.url}>{post.data.title}</a>
+                                            </h3>
                                             <div>
+                                                <p className='subreddit-link'><Link
+                                                    to={`/subreddit/${post.data.subreddit}`}>
+                                                    {post.data.subreddit_name_prefixed}</Link></p>
                                                 <p>Comments: {post.data.num_comments}</p>
                                                 <p>Ups: {post.data.ups}</p>
                                             </div>
                                         </article>
-                                    </div>
-                                )
-                            })}
-                        </>
-                    }
+                                    )
+                                })}
+                            </>
+                        }
+                    </div>
                 </div>
             </main>
         </>
