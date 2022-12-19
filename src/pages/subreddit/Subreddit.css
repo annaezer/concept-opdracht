@@ -1,0 +1,29 @@
+.link-to-home a {
+    color: var(--link-text-color);
+    font-weight: bold;
+}
+
+.title {
+    font-size: 70px;
+}
+
+.sub-title {
+    padding: 0 0 80px 0;
+}
+
+.inner-subreddit {
+    display: flex;
+    flex-basis: 500px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80px 0 100px 0;
+}
+
+.space {
+    padding: 40px 0 20px 0;
+}
+
+.more-space {
+    padding: 60px 0;
+}
