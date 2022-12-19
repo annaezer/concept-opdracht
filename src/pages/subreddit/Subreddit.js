@@ -29,18 +29,24 @@ function Subreddit() {
     return (
         <>
             <Header>
-                <h1>{post.display_name_prefixed}</h1>
-                <h4>Subreddit specifications</h4>
+                <h1 className='title'>{post.display_name_prefixed}</h1>
+                <h4 className='sub-title'>Subreddit specifications</h4>
             </Header>
-            <main>
-                <div className='inner-container'>
-                    <h3>Title</h3>
-                    <p>{post.title}</p>
-                    <h3>Description</h3>
-                    <p>{post.public_description}</p>
-                    <h3>Number of subscribers</h3>
-                    <p>{post.subscribers}</p>
+            <main className='outer-container'>
+                <div className='inner-subreddit'>
                     <div>
+                        <h3 className='space'>Title</h3>
+                        <p>{post.title}</p>
+                    </div>
+                    <div>
+                        <h3 className='space'>Description</h3>
+                        <p>{post.public_description}</p>
+                    </div>
+                    <div>
+                        <h3 className='space'>Number of subscribers</h3>
+                        <p>{post.subscribers}</p>
+                    </div>
+                    <div className='more-space'>
                         <p className='link-to-home'><Link to='/'>Take me back</Link></p>
                     </div>
                 </div>

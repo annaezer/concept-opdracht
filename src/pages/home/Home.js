@@ -39,7 +39,7 @@ function Home() {
 
             <Header>
                 <img src={logo} alt='logo Reddit'/>
-                <h1>Reddit</h1>
+                <h1 className='business-name'>Reddit</h1>
             </Header>
             <main className='outer-container'>
                 <div className='inner-container headings'>
