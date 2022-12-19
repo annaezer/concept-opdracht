@@ -41,7 +41,7 @@ function Subreddit() {
                     <h3>Number of subscribers</h3>
                     <p>{post.subscribers}</p>
                     <div>
-                        <p><Link to='/'>Take me back</Link></p>
+                        <p className='link-to-home'><Link to='/'>Take me back</Link></p>
                     </div>
                 </div>
             </main>

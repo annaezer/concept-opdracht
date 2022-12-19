@@ -1,8 +1,3 @@
-/*Rood #dd3038;*/
-/*Oranje #e7613a;*/
-/*Licht oranje #FDF4F2;*/
-/*Zwart #292929 (voor standaard tekst);*/
-/*Wit #FFFFFF;*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
@@ -15,8 +10,9 @@
 
 :root {
     --main-bg-color: #FDF4F2;
-    --header-color: linear-gradient(90deg, rgba(231,97,58,1) 0%, rgba(221,48,56,1) 100%);
+    --header-color: linear-gradient(90deg, rgba(231, 97, 58, 1) 0%, rgba(221, 48, 56, 1) 100%);
     --article-color: #FFFFFF;
+    --footer-color: #292929;
     --nf-text-color: #FFFFFF;
     --main-text-color: #292929;
     --link-text-color: #dd3038;
@@ -26,6 +22,16 @@
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
+body {
+    font-family: var(--ff-main);
+    color: var(--main-text-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--ff-heading);
+}
+
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
@@ -34,6 +40,37 @@
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
-/* --------------- 4.1 Header ------------------------- */
+/* --------------- 4.1 Navigation ------------------- */
 
-/* --------------- 4.2 Introduction ------------------- */
+nav a {
+    color: var(--nf-text-color);
+    text-decoration: none;
+}
+
+/* --------------- 4.2 Main ------------------- */
+
+main {
+    background: var(--main-bg-color);
+}
+
+/* --------------- 4.3 Article ------------------- */
+
+article {
+    background: var(--article-color);
+}
+
+.article-title a {
+    text-decoration: none;
+    color: var(--ff-heading);
+}
+
+.subreddit-link a {
+    color: var(--link-text-color);
+}
+
+/* --------------- 4.3 Footer ------------------- */
+
+footer {
+    background: var(--footer-color);
+    color: var(--nf-text-color);
+}

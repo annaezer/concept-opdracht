@@ -51,8 +51,8 @@ function Home() {
                                 return (
                                     <div className='flex-wrap'>
                                         <article className='article' key={post.data.id}>
-                                            <h3><a href={post.data.url}>{post.data.title}</a></h3>
-                                            <p><Link
+                                            <h3 className='article-title'><a href={post.data.url}>{post.data.title}</a></h3>
+                                            <p className='subreddit-link'><Link
                                                 to={`/subreddit/${post.data.subreddit}`}>{post.data.subreddit_name_prefixed}</Link>
                                             </p>
                                             <div>

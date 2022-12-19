@@ -6,12 +6,12 @@ function PageNotFound() {
 
     setTimeout(()=>{
         navigate("/")
-    }, 5000);
+    }, 3000);
 
     return (
         <>
             <h1>Page not found | 404</h1>
-            <p>You will be redirected in 5 sec.</p>
+            <p>You will be redirected in 3 sec.</p>
         </>
     );
 }
