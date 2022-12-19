@@ -15,7 +15,7 @@
 
 :root {
     --main-bg-color: #FDF4F2;
-    --header-color: #e7613a #dd3038;
+    --header-color: linear-gradient(90deg, rgba(231,97,58,1) 0%, rgba(221,48,56,1) 100%);
     --article-color: #FFFFFF;
     --nf-text-color: #FFFFFF;
     --main-text-color: #292929;

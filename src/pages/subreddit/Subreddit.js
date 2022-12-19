@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Subreddit.css';
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
+import Header from "../../components/header/Header";
 
 function Subreddit() {
     const {subredditId} = useParams();
@@ -19,26 +20,18 @@ function Subreddit() {
                 console.error(e);
             }
         }
-if (subredditId) {
-        fetchPost();
-}
+
+        if (subredditId) {
+            fetchPost();
+        }
     }, [subredditId]);
 
     return (
         <>
-            <header className='outer-container'>
-                <div className='inner-container'>
-                    <nav>
-                        <ul className='nav-items'>
-                            <li>Hottest posts</li>
-                            <li>Reddit</li>
-                            <li>Memes</li>
-                        </ul>
-                    </nav>
-                    <h1>{post.display_name_prefixed}</h1>
-                    <h4>Subreddit specifications</h4>
-                </div>
-            </header>
+            <Header>
+                <h1>{post.display_name_prefixed}</h1>
+                <h4>Subreddit specifications</h4>
+            </Header>
             <main>
                 <div className='inner-container'>
                     <h3>Title</h3>

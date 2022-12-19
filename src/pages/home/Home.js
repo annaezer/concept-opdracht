@@ -3,14 +3,19 @@ import './Home.css';
 import axios from 'axios';
 import logo from '../../assets/logo.png';
 import {Link} from "react-router-dom";
+import Header from "../../components/header/Header";
 
 function Home() {
     const [posts, setPosts] = useState([]);
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-
         async function fetchData() {
+            setLoading(true);
+
             try {
+                setError(false);
                 const results = await axios.get('https://www.reddit.com/hot.json?limit=15');
                 console.log(results);
                 const fifteenPosts = results.data.data.children;
@@ -19,7 +24,9 @@ function Home() {
 
             } catch (e) {
                 console.error(e);
+                setError(true);
             }
+            setLoading(false);
         }
 
         fetchData();
@@ -27,19 +34,13 @@ function Home() {
 
     return (
         <>
-            <header className='outer-container'>
-                <div className='inner-container'>
-                    <nav>
-                        <ul className='nav-items'>
-                            <li>Hottest posts</li>
-                            <li>Reddit</li>
-                            <li>Memes</li>
-                        </ul>
-                    </nav>
-                    <img src={logo} alt='logo Reddit'/>
-                    <h1>Reddit</h1>
-                </div>
-            </header>
+            {error && <p>Error: could not fetch data!</p>}
+            {loading && <p>Loading...</p>}
+
+            <Header>
+                <img src={logo} alt='logo Reddit'/>
+                <h1>Reddit</h1>
+            </Header>
             <main>
                 <div className='inner-container'>
                     <h2>Hottest posts</h2>
